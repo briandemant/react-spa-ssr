@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -rf public/assets/
+BUILD=prod ./bin/webpack  -p

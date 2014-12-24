@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -rf public/assets/
+BUILD=dev ./bin/webpack -w&
+pid=$!
+node ./bin/nodemon -w src/server src/server 

@@ -1,0 +1,18 @@
+### Node template
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+    
+# node-waf configuration
+.lock-wscript 
+
+# Dependency directory
+node_modules
+
+# project files
+.idea
