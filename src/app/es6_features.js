@@ -1,13 +1,25 @@
-if (__DEV__) {
-	console.warn('Extra dev');
-}
-if (__PRERELEASE__) {
-	console.warn('Extra prerelease');
-}
+//if (__DEV__) {
+//	console.warn('Extra dev');
+//}
+//if (__PRERELEASE__) {
+//	console.warn('Extra prerelease');
+//}
+console.log(process.argv)
+// --------------------------------------------
+"array comprehension";
+var customers = [{city : 'a', name : 'a'}, {city : 'b', name : 'b'}, {city : 'c', name : 'c'}];
+var seattlers = [for (c of customers) if (c.city != "b") {name : c.name, age : c.age}];
 
 // --------------------------------------------
 "arrow functions";
 var array = (()=> {return [1, 2]});
+var Thing = {
+	huh : function() {
+		return ()=> this;
+	}
+}
+console.log(Thing == Thing.huh()());
+
 
 // --------------------------------------------
 "let and const"
@@ -81,46 +93,54 @@ import {firstName, lastName, year} from './module';
 // --------------------------------------------
 "Numeric Literals"
 var binary = [
-  0b0,
-  0b1,
-  0b11
+	0b0,
+	0b1,
+	0b11
 ];
 
 // --------------------------------------------
 "Object Initializer Shorthand"
 function getPoint() {
-  var x = 1;
-  var y = 10;
+	var x = 1;
+	var y = 10;
 
-  return {x, y};
+	return {x, y};
 }
 
 // --------------------------------------------
 "Rest parameters"
 function push(array, ...items) {
-  items.forEach(function(item) {
-    array.push(item);
-  }); 
+	items.forEach(function(item) {
+		array.push(item);
+	});
 }
 
 
 // --------------------------------------------
 "Spread parameters"
-function push(array, ...items) {
-  array.push(...items);
+function push2(array, ...items) {
+	array.push(...items);
 }
-var res = [1,2,3];
-push(res, ...res);
+var res = [1, 2, 3];
+push2(res, ...res);
 
 
 // --------------------------------------------
 "Template Literals"
+var name = 'qwe';
 var greeting = `hello ${name}!`;
- 
+
 // --------------------------------------------
-"Symbols" 
-var s = Symbol('name');
-console.log(s);
+"Symbols"
+var a = Symbol('name');
+var b = Symbol('name');
+console.log(a);
+console.log(b);
+console.log(a == b);
+console.dir(b);
 
 var object = {};
-object[s] = 42; 
+object[a] = 42;
+object[b] = 43;
+console.log('a = ' + object[a]);
+console.log('b = ' + object[b]);

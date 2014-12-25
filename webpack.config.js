@@ -15,10 +15,12 @@ module.exports = {
 	module : {
 		loaders : [
 			//{test : /\.js$/, loader : 'jsx-loader?harmony'},
-			{test : /^(?!.*(bower_components|node_modules))+.+\.js$/, loader : 'traceur?runtime', sourceMaps: true},
+			//{test : /^(?!.*(bower_components|node_modules))+.+\.js$/, loader : 'traceur'},
+			{test : /^(?!.*(bower_components|node_modules))+.+\.js$/, loader : '6to5-loader?experimental' },
 			//{test : /\.js$/, loader : 'traceur?experimental&runtime'},
 			//{test : /\.jsx$/, loader : 'jsx-loader?harmony!traceur'},
-			{test :/^(?!.*(bower_components|node_modules))+.+\.jsx$/, loader : 'traceur?runtime!jsx-loader?harmony'},
+			{test :/^(?!.*(bower_components|node_modules))+.+\.jsx$/, loader : '6to5-loader?experimental!jsx-loader'},
+			//{test :/^(?!.*(bower_components|node_modules))+.+\.jsx$/, loader : 'traceur!jsx-loader'},
 		]
 	},
 	output : {

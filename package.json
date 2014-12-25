@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/briandemant/react-spa-ssr",
   "dependencies": {
+    "6to5": "^1.15.0",
+    "6to5-loader": "^0.2.4",
     "compression": "^1.2.2",
     "debug": "^2.1.0",
     "express": "^4.10.6",
@@ -31,8 +33,7 @@
     "nodemon": "^1.2.1",
     "puer": "^1.0.8",
     "react": "^0.12.2",
-    "serve-static": "^1.7.1",
-    "traceur-loader": "^0.6.3",
+    "serve-static": "^1.7.1", 
     "webpack": "^1.4.14"
   }
 }

@@ -18,6 +18,12 @@ if (__PRERELEASE__) {
 // --------------------------------------------
 "arrow functions";
 var array = (()=> {return [1, 2]});
+var Thing = {
+	huh : function() {
+		return ()=> this;
+	}
+}
+console.log(Thing == Thing.huh()());
 
 // --------------------------------------------
 "let and const"

@@ -1,7 +1,10 @@
 {
   "ignore": "public/*",
-  "verbose": true,
+  "verbose": false,
   "execMap": {
-    "js": "node --harmony"
+    "js": "node src/utils/6to5-req.js"
+  },
+  "env": {
+    "NODE_ENV": "development"
   }
 }
