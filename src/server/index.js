@@ -1,20 +1,8 @@
-//var to5 = require("6to5");
-require('node-jsx').install({
-	extension : '.jsx',
-	additionalTransformd : function(src) {
-		
-		//src = require("regenerator").compile(src, {
-		//  includeRuntime: true
-		//}).code
-		  src = to5.transform(src, {
-			'experimental' : true 
-		}).code;
-		console.log(src);
-		
-		return src;
-	},
-	'harmony' : true
-});
+let qwe = (x)=>x * x;
+
+console.log("qwe:" + qwe(4));
+
+
 require('../app/jsx_features');
 require('../app/es6_features');
 
