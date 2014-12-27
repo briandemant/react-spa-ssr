@@ -1,3 +1,3 @@
-export var firstName = 'David';
-export var lastName = 'Belle';
-export var year = 1973;
+console.log('I am MODULE');
+
+module.exports = {name:"the module",other:'YEP!'}

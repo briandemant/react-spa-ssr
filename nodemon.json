@@ -2,6 +2,7 @@
   "ignore": "public/*",
   "verbose": false,
   "execMap": {
+    "": "node src/utils/6to5-req.js",
     "js": "node src/utils/6to5-req.js"
   },
   "env": {

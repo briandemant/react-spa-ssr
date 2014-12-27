@@ -25,15 +25,19 @@
   "dependencies": {
     "6to5": "^1.15.0",
     "6to5-loader": "^0.2.4",
+    "ancient-oak": "^0.3.4",
     "compression": "^1.2.2",
     "debug": "^2.1.0",
+    "director": "^1.2.7",
     "express": "^4.10.6",
     "jsx-loader": "^0.12.2",
     "morgan": "^1.5.0",
     "nodemon": "^1.2.1",
     "puer": "^1.0.8",
     "react": "^0.12.2",
-    "serve-static": "^1.7.1", 
+    "rx": "^2.3.22",
+    "serve-static": "^1.7.1",
+    "signals": "^1.0.0",
     "webpack": "^1.4.14"
   }
 }

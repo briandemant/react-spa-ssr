@@ -8,31 +8,39 @@ var definePlugin = new webpack.DefinePlugin({
 
 
 module.exports = {
+	//target : 'async-node',
 	entry : {
+		//output : './tmp/src.jsx',
+		//output2 : './tmp/src2.jsx'
 		jsx : "./src/app/jsx_features.jsx",
 		es6 : "./src/app/es6_features.js"
 	},
 	module : {
-		loaders : [
-			//{test : /\.js$/, loader : 'jsx-loader?harmony'},
-			//{test : /^(?!.*(bower_components|node_modules))+.+\.js$/, loader : 'traceur'},
-			{test : /^(?!.*(bower_components|node_modules))+.+\.js$/, loader : '6to5-loader?experimental' },
-			//{test : /\.js$/, loader : 'traceur?experimental&runtime'},
-			//{test : /\.jsx$/, loader : 'jsx-loader?harmony!traceur'},
-			{test :/^(?!.*(bower_components|node_modules))+.+\.jsx$/, loader : '6to5-loader?experimental!jsx-loader'},
-			//{test :/^(?!.*(bower_components|node_modules))+.+\.jsx$/, loader : 'traceur!jsx-loader'},
+		loaders : [ 
+			{
+				test : /^(?!.*(bower_components|node_modules))+.+\.js$/,
+				//loader : '6to5-loader?experimental&runtime'
+				loader : '6to5-loader?experimental=true&runtime=true'
+			}, 
+			{
+				test : /^(?!.*(bower_components|node_modules))+.+\.jsx$/,
+				loader : 'jsx-loader?harmony'
+				//loader : '6to5-loader?experimental&runtime!jsx-loader'
+			},
 		]
 	},
 	output : {
 		path : path.join(__dirname, "public", "assets"),
 		publicPath : "/assets/",
+//		path : path.join(__dirname, "public", "assets", "[hash]"),
+//		publicPath : "/assets/[hash]/",
 		filename : "[name].bundle.js",
 		chunkFilename : "[id].chunk.js"
 	},
 	plugins : [
 		definePlugin,
 		new webpack.optimize.CommonsChunkPlugin("commons.js"),
-		new webpack.optimize.LimitChunkCountPlugin({maxChunks : 3}),
+		//new webpack.optimize.LimitChunkCountPlugin({maxChunks : 3}),
 		//new webpack.optimize.DedupePlugin(),
 		//new webpack.optimize.UglifyJsPlugin({
 		//	compress : {
